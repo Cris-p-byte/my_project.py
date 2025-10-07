@@ -1,20 +1,11 @@
 again = "yes"
-
 while again == "yes":
-    num = input("Enter numbers: ")
+    nums = [int(x) for x in input("Enter numbers: ")]
     order = input("asc or desc: ")
-
-    numbers = [int(x) for x in num]
-
-    for i in range(len(numbers)):
-        for j in range(len(numbers) - i - 1):
-            if order == "asc" and numbers[j] > numbers[j + 1]:
-                numbers[j], numbers[j + 1] = numbers[j + 1], numbers[j]
-            elif order == "desc" and numbers[j] < numbers[j + 1]:
-                numbers[j], numbers[j + 1] = numbers[j + 1], numbers[j]
-
-    print("Sorted:", numbers)
-
-    again = input("Do you want to sort again? (Yes or No): ").lower()
-
+    for _ in nums:
+        for j in range(len(nums) - 1):
+            if (order == "asc" and nums[j] > nums[j+1]) or (order == "desc" and nums[j] < nums[j+1]):
+                nums[j], nums[j+1] = nums[j+1], nums[j]
+    print("Sorted:", nums)
+    again = input("Sort again? (yes/no): ").lower()
 print("Goodbye!")
