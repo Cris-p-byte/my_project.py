@@ -4,7 +4,7 @@ while choice.lower() == 'y':
     
     print("Multiplication Table")
     for i in range(1, 11):
-        print("{num} x {i} = {num * i}")
+        print(f"{num} x {i} = {num * i}")
     
     choice = input("Do you want to generate another table? (y/n): ")
 
